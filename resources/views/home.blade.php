@@ -15,12 +15,12 @@
 
 </head>
 
-<body class="bg-dark d-flex align-items-center ">
+<body class="d-flex align-items-center ">
     <div class="container-fluid">
         <div class="row">
-            <div class="col">
+            <div class="col-12 d-flex justify-content-center">
 
-                <table class="table p-3">
+                <table class="table p-3 text-center">
                     <thead>
                       <tr>
                         <th scope="col"><i class="fa-solid fa-train" style="color: #001c4d;"></i></th>
@@ -56,12 +56,12 @@
                         </td>
                         <td>
                             <span>
-                                {{$train->orario_partenza}}
+                                {{substr($train->orario_partenza, 0,5)}}
                             </span>
                         </td>
                         <td>
                             <span>
-                                {{$train->orario_arrivo}}
+                                {{substr($train->orario_arrivo, 0,5)}}
                             </span>
                         </td>
                         <td>
