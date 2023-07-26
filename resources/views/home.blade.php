@@ -91,18 +91,13 @@
                         
                         @endforeach
                     </table>
-                    
                 </div>
                 @if($train->data_partenza !== $train->data_odierna)
-               
-                <div class="bg-danger text-white text-center col-6 offset-3">
-                    <h1>nessun treno in partenza oggi</h1>
-                </div>
+                    <div class="bg-danger text-white text-center col-6 offset-3">
+                        <h1>nessun altro treno disponibile</h1>
+                    </div>
                 @endif
             </div>
         </div>
-
-
     </body>
-
 </html>
