@@ -9,21 +9,21 @@
 
     <!-- Fonts -->
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Styles -->
     @vite('resources/js/app.js')
 
 </head>
 
-<body class="bg-dark">
-    <div class="container">
+<body class="bg-dark d-flex align-items-center ">
+    <div class="container-fluid">
         <div class="row">
             <div class="col">
 
                 <table class="table p-3">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
+                        <th scope="col"><i class="fa-solid fa-train" style="color: #001c4d;"></i></th>
                         <th scope="col">Azienda</th>
                         <th scope="col">St.Partenza</th>
                         <th scope="col">St.Arrivo</th>
@@ -76,12 +76,12 @@
                         </td>
                         <td>
                             <span>
-                                
+                                {{$train->in_orario ? '':'+5 min'}}
                             </span>
                         </td>
                         <td>
                             <span>
-                                
+                                <i class="{{$train->cancellato ? 'fa-solid fa-circle-minus':'fa-solid fa-circle-check'}}" style="{{$train->cancellato ? ' color:#f00000': ' color:#03a300'}}"></i>
                             </span>
                         </td>
                       </tr>
