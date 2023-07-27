@@ -98,6 +98,25 @@
                     </div>
                 @endif
             </div>
+            <div class="row">
+                <div class="col-6 offset-2 d-flex justify-content-center my-5">
+                    <h1 class="text-white pe-3">Lista Passeggeri:</h1>
+                    <ul class=" p-0">
+
+                        @foreach($passengers as $passenger)
+                        <li class="text-white d-flex bg-dark flex-column border text-center my-2 p-2">
+                            <h6>Passeggero: <strong> {{$passenger->nome }}-{{$passenger->cognome}}</strong></h6>
+                            <span>Email-<i class="fa-solid fa-at" style="color: #f7f7f7;"></i> : <strong>{{$passenger->email}}</strong></span>
+                            <span><i class="fa-solid fa-mobile-screen-button" style="color: #f7f7f7;"></i> : {{$passenger->n_telefonico}}</span>
+                            <span><i class="fa-solid fa-couch" style="color: #ffffff;"></i> : <strong>{{$passenger->posto_prenotato}}</strong></span>
+                            <span>Codice biglietto : {{$passenger->codice_biglietto}}</span>
+                            <span>Classe: {{$passenger->classe? 'prima classe':'seconda classe'}}</span>
+                            <span>Tariffa: {{$passenger->tariffa_ridotta? 'biglietto a tariffa ridotta':'standard'}}</span>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
         </div>
     </body>
 </html>
