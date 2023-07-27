@@ -15,7 +15,14 @@ return new class extends Migration
     {
         Schema::create('passengers', function (Blueprint $table) {
             $table->id();
-            $table->
+            $table->string('nome');
+            $table->string('cognome');
+            $table->string('email');
+            $table->integer('n_telefonico');
+            $table->string('posto_prenotato');
+            $table->string('codice_biglietto');
+            $table->boolean('classe');
+            $table->boolean('tariffa_ridotta');
             $table->timestamps();
         });
     }
