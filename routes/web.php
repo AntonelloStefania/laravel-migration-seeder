@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Guest\PageController as Pagecontroller;
-use App\Http\Controllers\Guest\PassengerController as PassengerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +17,3 @@ use App\Http\Controllers\Guest\PassengerController as PassengerController;
 */
 
 Route::get('/', [PageController::class, 'index'])->name('homepage');
-Route::get('/', [PassengerController::class, 'index'])->name('homepage');
