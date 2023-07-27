@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
+{{date_default_timezone_set("Europe/Rome")}}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,7 +36,7 @@
                         </tr>
                         </thead>
                     @foreach($trains as $train)
-                        @if($train->data_partenza === $train->data_odierna)
+                        @if($train->data_partenza === date('Y-m-d'))
                         <tbody>
                         <tr>
                             <th scope="row">{{$train->id}}</th>
@@ -92,7 +92,7 @@
                         @endforeach
                     </table>
                 </div>
-                @if($train->data_partenza !== $train->data_odierna)
+                @if($train->data_partenza !== date('Y-m-d'))
                     <div class="bg-danger text-white text-center col-6 offset-3">
                         <h1>nessun altro treno disponibile</h1>
                     </div>
