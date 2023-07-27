@@ -22,11 +22,17 @@ class TrainTableSeeder extends Seeder
         for($i=0; $i<6; $i++){
             $train = new Train();
             $train->azienda = $faker->word();
-            $train->stazione_di_partenza->city();
-            $train->stazione_di_arrivo->city();
-            $train->orario_partenza-> 
-            $train->orario_arrivo->
-            $train->codice_treno->
+            $train->stazione_di_partenza = $faker->city();
+            $train->stazione_di_arrivo = $faker->city();
+            $train->orario_partenza = $faker->time();
+            $train->orario_arrivo = $faker->time();
+            $train->codice_treno = $faker->numberBetween(100, 99999);
+            $train->numero_carrozze = $faker->numberBetween(6, 20);
+            $train->in_orario = $faker->boolean();
+            $train->cancellato = $faker->boolean();
+            $train->data_partenza = $faker->date();
+
+            $train->save();
         }
         
     }
